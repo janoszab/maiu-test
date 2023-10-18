@@ -29,7 +29,7 @@ class StoreCompanyRequest extends FormRequest
             'activity' => 'required',
             'active' => 'required|boolean',
             'email' => 'required|email|unique:companies',
-            'password' => 'required'
+            'password' => 'required',
         ];
     }
 }

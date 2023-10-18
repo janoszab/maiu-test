@@ -9,6 +9,8 @@ class Company extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'companyId';
+
     protected $fillable = ['companyName', 'companyRegistrationNumber', 'companyFoundationDate', 'country', 'zipCode', 'city', 'streetAddress', 'latitude', 'longitude', 'companyOwner', 'employees', 'activity', 'active', 'email', 'password'];
 
     public $timestamps = false;

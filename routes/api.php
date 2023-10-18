@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GetCompaniesController;
 use App\Http\Controllers\StoreCompanyController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('companies', StoreCompanyController::class);
+
+Route::prefix('companies')->group(function () {
+    Route::post('/', StoreCompanyController::class);
+    Route::get('/{ids?}', GetCompaniesController::class);
+});

@@ -15,6 +15,6 @@ class StoreCompanyController extends Controller
     {
         $company = Company::create($request->validated());
 
-        return new CompanyResource($company);
+        return CompanyResource::make($company);
     }
 }
