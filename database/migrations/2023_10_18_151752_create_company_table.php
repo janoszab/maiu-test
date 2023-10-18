@@ -11,23 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('company', function (Blueprint $table) {
+        Schema::create('companies', function (Blueprint $table) {
             $table->id('companyId')->autoIncrement();
-            $table->string('companyName', 255);
-            $table->string('companyRegistrationNumber', 15);
-            $table->date('companyFoundationDate');
-            $table->string('country', 255);
-            $table->string('zipCode', 50);
-            $table->string('city', 255);
-            $table->string('streetAddress', 255);
-            $table->string('latitude', 20);
-            $table->string('longitude', 20);
-            $table->string('companyOwner', 255);
-            $table->integer('employees');
-            $table->string('activity');
-            $table->boolean('active');
-            $table->string('email', 255)->unique();
-            $table->string('password', 255);
+            $table->string('companyName', 255)->nullable(false);
+            $table->string('companyRegistrationNumber', 15)->nullable(false);
+            $table->date('companyFoundationDate')->nullable(false);
+            $table->string('country', 255)->nullable(false);
+            $table->string('zipCode', 50)->nullable(false);
+            $table->string('city', 255)->nullable(false);
+            $table->string('streetAddress', 255)->nullable(false);
+            $table->string('latitude', 20)->nullable(false);
+            $table->string('longitude', 20)->nullable(false);
+            $table->string('companyOwner', 255)->nullable(false);
+            $table->integer('employees')->nullable(false);
+            $table->string('activity')->nullable(false);
+            $table->boolean('active')->nullable(false);
+            $table->string('email', 255)->unique()->nullable(false);
+            $table->string('password', 255)->nullable(false);
         });
     }
 
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('company');
+        Schema::dropIfExists('companies');
     }
 };
