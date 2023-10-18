@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GetCompaniesController;
 use App\Http\Controllers\StoreCompanyController;
+use App\Http\Controllers\UpdateCompanyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::prefix('companies')->group(function () {
     Route::post('/', StoreCompanyController::class);
     Route::get('/{ids?}', GetCompaniesController::class);
+    Route::put('{company}', UpdateCompanyController::class);
 });
